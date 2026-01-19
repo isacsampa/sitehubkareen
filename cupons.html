@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cupons | Kareen Guimarães</title>
+    
+    <!-- Fontes e Ícones -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Courier+New&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- CSS (O mesmo do site principal) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="glass-container">
+        
+        <!-- HEADER COM BOTÃO VOLTAR -->
+        <header style="margin-bottom: 20px;">
+            <a href="index.html" class="back-btn">
+                <i class="ph-bold ph-arrow-left"></i> Voltar
+            </a>
+            <div class="header-info">
+                <h1>Meus Cupons <i class="ph-fill ph-ticket verified-badge"></i></h1>
+                <p class="bio">Toque no cupom para copiar ✨</p>
+            </div>
+        </header>
+
+        <!-- LISTA DE CUPONS -->
+        <section class="coupon-list">
+            
+            <!-- Cupom 1 -->
+            <div class="coupon-card" onclick="copyCoupon('KAREEN')">
+                <div class="brand-info">
+                    <i class="ph-fill ph-shopping-bag icon-brand"></i>
+                    <h3>Ollie</h3>
+                </div>
+                <div class="code-box">KAREEN</div>
+            </div>
+
+            <!-- Cupom 2 -->
+            <div class="coupon-card" onclick="copyCoupon('KAREEN10')">
+                <div class="brand-info">
+                    <i class="ph-fill ph-sparkle icon-brand"></i>
+                    <h3>Vizzela</h3>
+                </div>
+                <div class="code-box">KAREEN10</div>
+            </div>
+
+            <!-- Cupom 3 -->
+            <div class="coupon-card" onclick="copyCoupon('KAREEN15')">
+                <div class="brand-info">
+                    <i class="ph-fill ph-plant icon-brand"></i>
+                    <h3>BellaPhytus</h3>
+                </div>
+                <div class="code-box">KAREEN15</div>
+            </div>
+
+            <!-- Cupom 4 -->
+            <div class="coupon-card" onclick="copyCoupon('KAREEN')">
+                <div class="brand-info">
+                    <i class="ph-fill ph-heart icon-brand"></i>
+                    <h3>Guava</h3>
+                </div>
+                <div class="code-box">KAREEN</div>
+            </div>
+
+            <!-- Cupom 5 -->
+            <div class="coupon-card" onclick="copyCoupon('10#KAREEN')">
+                <div class="brand-info">
+                    <i class="ph-fill ph-drop icon-brand"></i>
+                    <h3>Sallve</h3>
+                </div>
+                <div class="code-box">10#KAREEN</div>
+            </div>
+
+            <!-- Cupom 6 -->
+            <div class="coupon-card" onclick="copyCoupon('KAREEN10')">
+                <div class="brand-info">
+                    <i class="ph-fill ph-magic-wand icon-brand"></i>
+                    <h3>BisYou</h3>
+                </div>
+                <div class="code-box">KAREEN10</div>
+            </div>
+
+            <!-- Cupom 7 -->
+            <div class="coupon-card" onclick="copyCoupon('KAREEN10')">
+                <div class="brand-info">
+                    <i class="ph-fill ph-flower icon-brand"></i>
+                    <h3>Belas Garden</h3>
+                </div>
+                <div class="code-box">KAREEN10</div>
+            </div>
+
+            <!-- Cupom 8 -->
+            <div class="coupon-card" onclick="copyCoupon('KAREEN')">
+                <div class="brand-info">
+                    <i class="ph-fill ph-hair-dryer icon-brand"></i>
+                    <h3>Braé</h3>
+                </div>
+                <div class="code-box">KAREEN</div>
+            </div>
+
+            <!-- Cupom 9 -->
+            <div class="coupon-card" onclick="copyCoupon('KAREEN15')">
+                <div class="brand-info">
+                    <i class="ph-fill ph-star icon-brand"></i>
+                    <h3>Dride</h3>
+                </div>
+                <div class="code-box">KAREEN15</div>
+            </div>
+
+        </section>
+
+        <!-- CRÉDITOS -->
+        <a href="https://instagram.com/seu_instagram" target="_blank" class="developer-credit">
+            isac.dev
+        </a>
+
+    </div>
+
+    <!-- TOAST -->
+    <div id="toast">Cupom copiado!</div>
+
+    <!-- SCRIPT INLINE (Para funcionar nessa página especifica) -->
+    <script>
+        function copyCoupon(code) {
+            navigator.clipboard.writeText(code).then(() => {
+                const toast = document.getElementById("toast");
+                toast.innerText = "Código " + code + " copiado!";
+                toast.className = "show";
+                setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 3000);
+            });
+        }
+    </script>
+</body>
+</html>

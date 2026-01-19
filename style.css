@@ -271,3 +271,83 @@ header {
 
 @keyframes fadein { from {bottom: 0; opacity: 0;} to {bottom: 30px; opacity: 1;} }
 @keyframes fadeout { from {bottom: 30px; opacity: 1;} to {bottom: 0; opacity: 0;} }
+/* --- ESTILOS DA PÁGINA DE CUPONS --- */
+
+/* Botão de Voltar */
+.back-btn {
+    align-self: flex-start;
+    margin-bottom: 15px;
+    text-decoration: none;
+    color: var(--text-gray);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: 0.3s;
+}
+.back-btn:hover { color: #fff; transform: translateX(-5px); }
+
+/* Lista de Cupons */
+.coupon-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.coupon-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.coupon-card:active { transform: scale(0.98); } /* Efeito de clique */
+
+.coupon-card:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: var(--primary-pink);
+}
+
+.brand-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon-brand {
+    font-size: 1.2rem;
+    color: var(--primary-pink);
+}
+
+.brand-info h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* Caixa do Código (Visual de Ticket) */
+.code-box {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px dashed var(--text-gray);
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-family: 'Courier New', monospace;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--primary-pink);
+    letter-spacing: 1px;
+}
+
+.coupon-card:hover .code-box {
+    background: var(--primary-pink);
+    color: #fff;
+    border-color: transparent;
+}
