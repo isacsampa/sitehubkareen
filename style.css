@@ -1,12 +1,12 @@
 :root {
-    --bg-dark: #050505;
-    --primary-pink: #ff0080;
-    --secondary-purple: #7928ca;
-    --text-white: #ffffff;
-    --text-gray: #b0b0b0;
-    --glass-bg: rgba(255, 255, 255, 0.08);
-    --glass-border: rgba(255, 255, 255, 0.1);
-    --gradient-brand: linear-gradient(135deg, #ff0080, #7928ca);
+    --bg-dark: #f7f3ef; /* base nude background */
+    --primary-pink: #f2c7b9; /* pastel peach accent */
+    --secondary-purple: #a67c52; /* warm brown secondary */
+    --text-white: #1e1b18; /* primary text (dark) */
+    --text-gray: #7a6a5b; /* muted brown/gray */
+    --glass-bg: rgba(255, 255, 255, 0.7); /* soft glass on light bg */
+    --glass-border: rgba(0, 0, 0, 0.06);
+    --gradient-brand: linear-gradient(135deg, #f2c7b9, #a67c52);
 }
 
 * {
@@ -19,7 +19,7 @@
 
 /* O BODY GARANTE A CENTRALIZAÇÃO GERAL */
 body {
-    background: radial-gradient(circle at top, #1a0b14, #000000);
+    background: radial-gradient(circle at top, #fbf7f3, #f0e7de);
     color: var(--text-white);
     min-height: 100vh;
     display: flex;
@@ -68,8 +68,8 @@ header {
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid #000; /* Borda interna para contraste */
-    background-color: #222;
+    border: 4px solid rgba(0,0,0,0.06); /* Borda sutil */
+    background-color: #f3ebe2;
     display: block;
 }
 
@@ -101,7 +101,7 @@ header {
 }
 
 .tags span {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(30,27,24,0.04);
     padding: 4px 10px;
     border-radius: 20px;
     font-size: 0.75rem;
@@ -145,18 +145,18 @@ header {
     align-items: center;
     justify-content: center;
     font-size: 1.2rem;
-    color: #fff;
+    color: var(--text-white);
     transition: transform 0.2s;
 }
 .story-ring i {
-    background: #111;
+    background: #f7efe9;
     width: 100%;
     height: 100%;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #000;
+    border: 2px solid rgba(0,0,0,0.06);
 }
 
 .highlight-item:hover .story-ring { transform: scale(1.05); }
@@ -177,7 +177,7 @@ header {
     padding: 15px 18px;
     border-radius: 16px;
     text-decoration: none;
-    color: white;
+    color: var(--text-white);
     transition: all 0.3s ease;
 }
 
@@ -186,12 +186,12 @@ header {
     border: 1px solid var(--glass-border);
     backdrop-filter: blur(10px);
 }
-.glass-card:hover { background: rgba(255,255,255,0.15); transform: translateY(-2px); }
+.glass-card:hover { background: rgba(0,0,0,0.03); transform: translateY(-2px); }
 
 .featured-card {
     background: var(--gradient-brand);
     border: none;
-    box-shadow: 0 4px 15px rgba(255, 0, 128, 0.4);
+    box-shadow: 0 4px 15px rgba(166,124,82,0.18);
 }
 .featured-card:hover { transform: scale(1.02); }
 
@@ -219,7 +219,7 @@ header {
     gap: 8px;
     transition: 0.3s;
 }
-.glass-btn:hover { border-color: var(--primary-pink); color: #fff; background: rgba(255,0,128,0.1); }
+.glass-btn:hover { border-color: var(--primary-pink); color: var(--text-white); background: rgba(242,199,185,0.15); }
 
 .socials { margin-top: 30px; display: flex; gap: 20px; }
 .socials a { color: var(--text-gray); font-size: 1.5rem; transition: 0.3s; }
@@ -252,7 +252,7 @@ header {
     font-size: 0.9rem;
     
     /* Cor discreta mas legível */
-    color: rgba(255, 255, 255, 0.3); 
+    color: rgba(30, 27, 24, 0.45); 
     text-decoration: none; /* Remove o sublinhado do link */
     letter-spacing: 2px;   /* Espaçamento entre letras */
     
@@ -262,10 +262,10 @@ header {
 
 /* Efeito ao passar o mouse (Neon Rosa) */
 .developer-credit:hover {
-    color: var(--primary-pink);
-    text-shadow: 0 0 8px rgba(255, 0, 128, 0.8);
-    transform: scale(1.1);
-    letter-spacing: 4px; /* Efeito visual legal ao passar o mouse */
+    color: var(--secondary-purple);
+    text-shadow: 0 4px 18px rgba(166,124,82,0.08);
+    transform: scale(1.05);
+    letter-spacing: 3px;
 }
 #toast.show { visibility: visible; animation: fadein 0.5s, fadeout 0.5s 2.5s; }
 
@@ -285,7 +285,7 @@ header {
     gap: 5px;
     transition: 0.3s;
 }
-.back-btn:hover { color: #fff; transform: translateX(-5px); }
+.back-btn:hover { color: var(--text-white); transform: translateX(-5px); }
 
 /* Lista de Cupons */
 .coupon-list {
@@ -312,7 +312,7 @@ header {
 .coupon-card:active { transform: scale(0.98); } /* Efeito de clique */
 
 .coupon-card:hover {
-    background: rgba(255, 255, 255, 0.12);
+    background: rgba(0, 0, 0, 0.02);
     border-color: var(--primary-pink);
 }
 
@@ -330,19 +330,19 @@ header {
 .brand-info h3 {
     font-size: 0.95rem;
     font-weight: 600;
-    color: #fff;
+    color: var(--text-white);
 }
 
 /* Caixa do Código (Visual de Ticket) */
 .code-box {
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(30,27,24,0.06);
     border: 1px dashed var(--text-gray);
     padding: 5px 12px;
     border-radius: 6px;
     font-family: 'Courier New', monospace;
     font-weight: 700;
     font-size: 0.85rem;
-    color: var(--primary-pink);
+    color: var(--secondary-purple);
     letter-spacing: 1px;
 }
 
